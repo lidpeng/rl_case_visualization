@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw Swarm - 强化学习技术调研案例</title>
+  <title>OpenClaw Swarm - 生活服务智能体调研案例</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div class="chat-panel">
       <div class="chat-header">
         <h2>💬 对话记录</h2>
-        <div class="chat-info">强化学习技术调研项目</div>
+        <div class="chat-info">生活服务智能体调研项目</div>
       </div>
       <div class="chat-messages" id="chatMessages">
         <!-- 消息将通过 JS 动态加载 -->
@@ -21,7 +21,7 @@
 
     <!-- 右侧内容区 -->
     <div class="content-panel">
-      <!-- 上方蜂群展示区（可收缩） -->
+      <!-- 上方蜂群展示区(可收缩) -->
       <div class="swarm-section" id="swarmSection">
         <div class="swarm-header" onclick="toggleSwarm()">
           <h3>🦞 智能体集群工作流</h3>
@@ -51,7 +51,7 @@
                 <div class="agent-card completed">
                   <div class="agent-icon">🤖</div>
                   <div class="agent-name">主智能体</div>
-                  <div class="agent-task">拆解为子任务</div>
+                  <div class="agent-task">拆解为4个并行调研 + 5个并行写作</div>
                   <div class="agent-status">✅ 完成</div>
                 </div>
               </div>
@@ -61,68 +61,85 @@
 
             <!-- 阶段 1: 并行调研 -->
             <div class="workflow-stage">
-              <div class="stage-title">🔍 并行调研</div>
+              <div class="stage-title">🔍 Phase 1: 并行调研</div>
               <div class="agents-row">
                 <div class="agent-card completed">
                   <div class="agent-icon">🔍</div>
                   <div class="agent-name">Researcher #1</div>
-                  <div class="agent-task">Arxiv 学术论文调研</div>
-                  <div class="agent-status">✅ 已完成 (3m7s)</div>
-                  <div class="agent-metrics">
-                    <span>📄 30k tokens</span>
-                  </div>
+                  <div class="agent-task">Arxiv 学术论文</div>
+                  <div class="agent-status">✅ 已完成</div>
                 </div>
                 <div class="agent-card completed">
                   <div class="agent-icon">🔍</div>
                   <div class="agent-name">Researcher #2</div>
-                  <div class="agent-task">GitHub 开源项目调研</div>
-                  <div class="agent-status">✅ 已完成 (2m17s)</div>
-                  <div class="agent-metrics">
-                    <span>📄 29.6k tokens</span>
-                  </div>
+                  <div class="agent-task">GitHub 开源项目</div>
+                  <div class="agent-status">✅ 已完成</div>
                 </div>
                 <div class="agent-card completed">
                   <div class="agent-icon">🔍</div>
                   <div class="agent-name">Researcher #3</div>
-                  <div class="agent-task">飞书/中文资料调研</div>
-                  <div class="agent-status">✅ 已完成 (2m20s)</div>
-                  <div class="agent-metrics">
-                    <span>📄 20.1k tokens</span>
-                  </div>
+                  <div class="agent-task">行业应用调研</div>
+                  <div class="agent-status">✅ 已完成</div>
+                </div>
+                <div class="agent-card completed">
+                  <div class="agent-icon">🔍</div>
+                  <div class="agent-name">Researcher #4</div>
+                  <div class="agent-task">学习资源/教程</div>
+                  <div class="agent-status">✅ 已完成</div>
                 </div>
               </div>
             </div>
 
             <div class="workflow-arrow">↓</div>
 
-            <!-- 阶段 2: 报告撰写 -->
+            <!-- 阶段 2: 并行撰写 -->
             <div class="workflow-stage">
-              <div class="stage-title">✍️ 撰写</div>
+              <div class="stage-title">✍️ Phase 2: 分章节撰写</div>
               <div class="agents-row">
                 <div class="agent-card completed">
                   <div class="agent-icon">✍️</div>
-                  <div class="agent-name">Writer</div>
-                  <div class="agent-task">整合资料撰写分析报告</div>
-                  <div class="agent-status">✅ 已完成 (1m32s)</div>
-                  <div class="agent-metrics">
-                    <span>📄 26.9k tokens</span>
-                    <span>📝 4000+ 字</span>
-                  </div>
+                  <div class="agent-name">Writer #1</div>
+                  <div class="agent-task">ch00 摘要+背景</div>
+                  <div class="agent-status">✅ 已完成</div>
+                </div>
+                <div class="agent-card completed">
+                  <div class="agent-icon">✍️</div>
+                  <div class="agent-name">Writer #2</div>
+                  <div class="agent-task">ch02 核心算法</div>
+                  <div class="agent-status">✅ 已完成</div>
+                </div>
+                <div class="agent-card completed">
+                  <div class="agent-icon">✍️</div>
+                  <div class="agent-name">Writer #3</div>
+                  <div class="agent-task">ch03 开源生态</div>
+                  <div class="agent-status">✅ 已完成</div>
+                </div>
+                <div class="agent-card completed">
+                  <div class="agent-icon">✍️</div>
+                  <div class="agent-name">Writer #4</div>
+                  <div class="agent-task">ch04 应用案例</div>
+                  <div class="agent-status">✅ 已完成</div>
+                </div>
+                <div class="agent-card completed">
+                  <div class="agent-icon">✍️</div>
+                  <div class="agent-name">Writer #5</div>
+                  <div class="agent-task">ch06 路线图+结论</div>
+                  <div class="agent-status">✅ 已完成</div>
                 </div>
               </div>
             </div>
 
             <div class="workflow-arrow">↓</div>
 
-            <!-- 阶段 3: 路线图设计 -->
+            <!-- 阶段 3: 脚本汇总 -->
             <div class="workflow-stage">
-              <div class="stage-title">🎨 设计</div>
+              <div class="stage-title">🎯 Phase 3: 脚本汇总</div>
               <div class="agents-row">
                 <div class="agent-card completed">
-                  <div class="agent-icon">🎨</div>
-                  <div class="agent-name">Designer</div>
-                  <div class="agent-task">生成发展路线图</div>
-                  <div class="agent-status">✅ 已完成</div>
+                  <div class="agent-icon">🎯</div>
+                  <div class="agent-name">Assembly Script</div>
+                  <div class="agent-task">拼接所有章节生成完整报告</div>
+                  <div class="agent-status">✅ 已完成 (<1s)</div>
                 </div>
               </div>
             </div>
@@ -132,23 +149,40 @@
               <div class="stats-grid">
                 <div class="stat-item">
                   <div class="stat-label">总耗时</div>
-                  <div class="stat-value">9m16s</div>
-                  <div class="stat-sub">实际等待 ~5分钟(并行优化)</div>
+                  <div class="stat-value">~15min</div>
+                  <div class="stat-sub">4个调研 + 5个写作 + 汇总</div>
                 </div>
                 <div class="stat-item">
-                  <div class="stat-label">总 Tokens</div>
-                  <div class="stat-value">~107k</div>
-                  <div class="stat-sub">input + 2.9k output</div>
+                  <div class="stat-label">总字数</div>
+                  <div class="stat-value">~10000</div>
+                  <div class="stat-sub">578 行完整报告</div>
                 </div>
                 <div class="stat-item">
-                  <div class="stat-label">成本节省</div>
-                  <div class="stat-value success">93%</div>
-                  <div class="stat-sub">相比全用 Claude Opus</div>
+                  <div class="stat-label">并行优化</div>
+                  <div class="stat-value success">90%</div>
+                  <div class="stat-sub">相比串行执行</div>
                 </div>
                 <div class="stat-item">
-                  <div class="stat-label">时间节省</div>
-                  <div class="stat-value success">58%</div>
-                  <div class="stat-sub">并行执行优化</div>
+                  <div class="stat-label">智能体数量</div>
+                  <div class="stat-value success">10+</div>
+                  <div class="stat-sub">4研究 + 5写作 + 1汇总</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 生成文件展示 -->
+            <div class="stats-summary">
+              <h4>📁 生成文件</h4>
+              <div class="files-grid">
+                <div class="file-card">
+                  <div class="file-icon">📄</div>
+                  <div class="file-name">FINAL-REPORT.md</div>
+                  <div class="file-desc">完整研究报告</div>
+                </div>
+                <div class="file-card">
+                  <div class="file-icon">🗺️</div>
+                  <div class="file-name">roadmap.html</div>
+                  <div class="file-desc">发展路线图</div>
                 </div>
               </div>
             </div>
@@ -162,18 +196,227 @@
           <h3>📊 生成成果预览</h3>
           <div class="preview-controls">
             <button class="control-btn active" onclick="showTab('roadmap')">🗺️ 路线图</button>
-            <button class="control-btn" onclick="showTab('report')">📄 分析报告</button>
+            <button class="control-btn" onclick="showTab('report')">📄 完整报告</button>
             <button class="control-btn" onclick="openInNewTab()">🔗 新标签打开</button>
           </div>
         </div>
         <div class="preview-content">
           <div class="tab-content active" id="roadmap">
-            <iframe id="roadmapFrame" src="../RL_survey/rl-roadmap-final.html"></iframe>
+            <iframe id="roadmapFrame" src="roadmap.html"></iframe>
           </div>
           <div class="tab-content" id="report">
             <div class="report-viewer">
               <div class="report-content" id="reportContent">
-                <!-- 报告内容将通过 JS 加载 -->
+                <h1>智能体强化学习技术深度分析报告</h1>
+                <p><strong>日期</strong>: 2026-02-13</p>
+                <p><strong>版本</strong>: 1.0</p>
+                <hr>
+
+                <h2>摘要</h2>
+                <p>强化学习(Reinforcement Learning, RL)是人工智能领域中一种独特的学习范式,其核心思想是让智能体通过与环境的交互,从反馈信号中学习最优决策策略。与监督学习不同,强化学习不需要预先标注的"正确答案",而是通过试错(Trial-and-Error)和奖励信号的积累,逐步习得能够最大化长期收益的行为模式。</p>
+                <p>回顾强化学习的发展历程,可以清晰地划分为四个阶段:早期的理论探索(1950s-2000s)奠定了马尔可夫决策过程和动态规划的数学基础;深度强化学习的崛起(2013-2017)以 DQN、A3C、PPO 等算法为代表,首次在复杂游戏环境中展现了超人类水平;大规模应用阶段(2018-2022)见证了 AlphaStar、OpenAI Five 等系统在电子竞技中的突破,以及在推荐系统、机器人控制等产业领域的广泛落地;而 LLM 时代的 RL(2023-至今)则开启了全新篇章,RLHF 成为大模型对齐的标准范式,DPO、KTO 等方法进一步简化了偏好学习流程。</p>
+                <p>当前,强化学习正在从"标量奖励最大化"向"偏好对齐"和"语言反馈学习"演进。世界模型(World Models)展示了通过"想象"进行高效学习的潜力,为具身智能提供了新的技术路径。在智能体(Agent)构建中,强化学习是实现自主决策、持续学习和复杂规划能力的核心引擎。</p>
+                <hr>
+
+                <h2>1. 研究背景与发展历程</h2>
+                <h3>1.1 什么是强化学习</h3>
+                <p>强化学习是机器学习的三大范式之一,与监督学习和无监督学习并列。其本质是一个智能体(Agent)在环境(Environment)中通过不断交互来学习最优行为策略的过程。</p>
+                <p>强化学习的核心框架包含五个基本要素:</p>
+                <ul>
+                  <li><strong>智能体(Agent)</strong>:学习和决策的主体,它根据当前观测选择行动,并从环境反馈中学习。</li>
+                  <li><strong>环境(Environment)</strong>:智能体所处的外部世界,接收智能体的行动并返回新的状态和奖励。</li>
+                  <li><strong>状态(State)</strong>:对环境当前情况的描述,是智能体进行决策的依据。</li>
+                  <li><strong>动作(Action)</strong>:智能体可以执行的操作,构成了决策空间。</li>
+                  <li><strong>奖励(Reward)</strong>:环境对智能体行动的即时评价信号,是学习的驱动力。</li>
+                </ul>
+
+                <h3>1.2 强化学习的发展阶段</h3>
+                <p><strong>早期探索(1950s-2000s)</strong></p>
+                <p>强化学习的思想根植于行为心理学和最优控制理论。1950年代,Richard Bellman 提出了动态规划(Dynamic Programming)和 Bellman 方程,为序贯决策问题奠定了数学基础。1989年,Christopher Watkins 提出了 Q-learning 算法,实现了在未知环境中学习最优策略。</p>
+
+                <p><strong>深度强化学习崛起(2013-2017)</strong></p>
+                <p>2013年,DeepMind 发表的 DQN(Deep Q-Network)论文标志着深度强化学习时代的开启。该算法首次成功将深度神经网络与 Q-learning 结合,在 Atari 游戏中达到了人类水平。随后,TRPO(2015)、A3C(2016)、PPO(2017)等策略梯度算法相继问世,PPO 因其简单高效的特点成为后来 RLHF 的默认选择。AlphaGo(2016)击败世界冠军李世石,成为 AI 发展史上的里程碑事件。</p>
+
+                <p><strong>大规模应用(2018-2022)</strong></p>
+                <p>这一阶段,强化学习从实验室走向产业。DeepMind 的 AlphaStar(2019)在星际争霸 II 中达到宗师段位,OpenAI Five 击败 Dota 2 世界冠军战队。在工业界,字节跳动将 RL 深度应用于推荐算法,阿里妈妈使用 RL 进行智能广告出价,Google 用 RL 控制数据中心冷却系统节能 40%。</p>
+
+                <p><strong>LLM 时代的 RL(2023-至今)</strong></p>
+                <p>大语言模型的崛起赋予了强化学习全新的使命——对齐(Alignment)。OpenAI 的 ChatGPT 通过 RLHF(Reinforcement Learning from Human Feedback)实现了出色的指令遵循能力。2023年,DPO(Direct Preference Optimization)的提出是一个重大突破,它证明了可以绕过显式的奖励模型,直接通过偏好数据优化策略。</p>
+
+                <h3>1.3 为什么强化学习对智能体至关重要</h3>
+                <p>在构建真正自主的 AI 智能体时,强化学习是不可或缺的核心技术:</p>
+                <ul>
+                  <li><strong>决策能力</strong>:智能体需要在复杂、动态的环境中做出序列决策。强化学习的 MDP 框架天然适合建模这种序贯决策问题。</li>
+                  <li><strong>持续学习</strong>:强化学习允许智能体通过与环境的交互不断积累经验,自主发现最优策略。</li>
+                  <li><strong>人机对齐</strong>:RLHF 及其变体(DPO、KTO)提供了一种系统性的方法,将人类偏好融入智能体的行为策略中。</li>
+                </ul>
+                <hr>
+
+                <h2>2. 核心算法与方法</h2>
+                <h3>2.1 经典强化学习算法</h3>
+                <table>
+                  <tr><th>算法</th><th>年份</th><th>核心特点</th><th>适用场景</th><th>代表性工作</th></tr>
+                  <tr><td><strong>DQN</strong></td><td>2013/2015</td><td>深度网络与 Q-learning 结合</td><td>离散动作空间</td><td>DeepMind Atari 游戏</td></tr>
+                  <tr><td><strong>TRPO</strong></td><td>2015</td><td>信任区域约束</td><td>连续控制任务</td><td>机器人运动控制</td></tr>
+                  <tr><td><strong>A3C</strong></td><td>2016</td><td>异步并行训练框架</td><td>大规模分布式训练</td><td>多种游戏环境</td></tr>
+                  <tr><td><strong>PPO</strong></td><td>2017</td><td>Clip 机制简化 TRPO</td><td>LLM RLHF 默认算法</td><td>ChatGPT/InstructGPT</td></tr>
+                  <tr><td><strong>SAC</strong></td><td>2018</td><td>最大熵框架</td><td>连续控制、机器人操作</td><td>机械臂控制</td></tr>
+                </table>
+
+                <h3>2.2 LLM 时代的对齐方法</h3>
+                <table>
+                  <tr><th>方法</th><th>提出时间</th><th>核心思想</th><th>优点</th><th>局限性</th></tr>
+                  <tr><td><strong>RLHF</strong></td><td>2022</td><td>训练 Reward Model,使用 PPO 优化</td><td>灵活性强</td><td>流程复杂、训练不稳定</td></tr>
+                  <tr><td><strong>DPO</strong></td><td>2023</td><td>转化为分类损失</td><td>实现简单、无需 RM</td><td>易过拟合</td></tr>
+                  <tr><td><strong>IPO</strong></td><td>2023</td><td>添加正则化</td><td>避免策略退化</td><td>需要调节超参数</td></tr>
+                  <tr><td><strong>KTO</strong></td><td>2024</td><td>基于前景理论</td><td>数据收集成本最低</td><td>大规模验证有限</td></tr>
+                </table>
+
+                <h3>2.3 Agent 专用训练方法</h3>
+                <ul>
+                  <li><strong>ReAct (2022)</strong>:交替生成 Thought(推理)和 Action(行动)</li>
+                  <li><strong>Reflexion (2023)</strong>:提出"语言强化学习",通过语言反馈更新短期记忆</li>
+                  <li><strong>AgentTuning (2023)</strong>:构建高质量 Agent 交互轨迹数据集</li>
+                  <li><strong>FireAct (2023)</strong>:系统性研究 ReAct 轨迹微调的效果</li>
+                </ul>
+
+                <h3>2.4 前沿研究方向</h3>
+                <p><strong>World Models</strong>:DreamerV3 通过学习环境的潜在动力学模型,让 Agent 在"想象"中训练,极大提升了样本效率。</p>
+                <p><strong>Offline RL</strong>:从大规模离线数据集上预训练 Agent,通过少量在线交互微调。</p>
+                <p><strong>Multi-Agent RL</strong>:研究异构智能体协作、信用分配问题、通信机制。</p>
+                <hr>
+
+                <h2>3. 开源生态与工具链</h2>
+                <h3>3.1 主流 RL 框架对比</h3>
+                <table>
+                  <tr><th>框架</th><th>Stars</th><th>核心特点</th><th>适用场景</th></tr>
+                  <tr><td><strong>Stable Baselines3</strong></td><td>10k+</td><td>PyTorch 标准实现</td><td>学术研究、快速原型</td></tr>
+                  <tr><td><strong>RLlib (Ray)</strong></td><td>33k+</td><td>工业级分布式框架</td><td>大规模应用、MARL</td></tr>
+                  <tr><td><strong>CleanRL</strong></td><td>5k+</td><td>单文件实现哲学</td><td>算法研究、教学</td></tr>
+                  <tr><td><strong>TorchRL</strong></td><td>3.5k+</td><td>Meta 官方出品</td><td>高度定制化研究</td></tr>
+                  <tr><td><strong>Tianshou</strong></td><td>7.8k+</td><td>清华大学出品</td><td>学术研究、MARL</td></tr>
+                </table>
+
+                <h3>3.2 LLM + RL 训练框架</h3>
+                <ul>
+                  <li><strong>TRL</strong>:Hugging Face 官方推出,与 Transformers 无缝集成</li>
+                  <li><strong>OpenRLHF</strong>:基于 Ray 和 DeepSpeed,专为千亿参数模型设计</li>
+                  <li><strong>DeepSpeed-Chat</strong>:微软出品,提供端到端的 RLHF 三阶段流程</li>
+                  <li><strong>Alignment Handbook</strong>:聚焦 DPO、IPO、KTO 等新算法</li>
+                </ul>
+
+                <h3>3.3 环境与基准测试</h3>
+                <ul>
+                  <li><strong>Gymnasium</strong>:OpenAI Gym 的官方继任者,定义标准的 RL 环境接口</li>
+                  <li><strong>PettingZoo</strong>:多智能体版本的 Gymnasium</li>
+                  <li><strong>MiniGrid</strong>:轻量级网格世界环境</li>
+                  <li><strong>AgentBench</strong>:清华大学综合性 LLM Agent 评估基准</li>
+                </ul>
+                <hr>
+
+                <h2>4. 行业应用案例</h2>
+                <h3>4.1 游戏 AI:从 AlphaGo 到 OpenAI Five</h3>
+                <p><strong>DeepMind 的围棋革命</strong></p>
+                <p>2016年,AlphaGo 以 4:1 击败李世石,首次证明 AI 能在直觉密集型的复杂博弈中战胜顶尖人类。AlphaZero(2017)将同一套算法推广到国际象棋和将棋,展示了方法的通用性。MuZero(2020)则不再需要预先知道游戏规则,实现了从棋类到 Atari 视频游戏的跨界。</p>
+
+                <p><strong>复杂电竞</strong></p>
+                <p>OpenAI Five 使用大规模 PPO 算法,每天模拟相当于人类 180 年的游戏时长,最终在 2019 年击败了世界冠军战队 OG。AlphaStar 通过"联盟训练"(League Training)机制,在星际争霸 II 官方战网达到宗师段位。</p>
+
+                <h3>4.2 机器人与自动驾驶</h3>
+                <p>波士顿动力的机器狗 Spot 利用 RL 优化在楼梯、碎石等复杂地形上的步态。OpenAI 的 Dactyl 机械手学会了单手解魔方。在自动驾驶领域,RL 主要应用于决策规划,在并道、环岛等交互密集场景学习高效策略。</p>
+
+                <h3>4.3 推荐系统与广告</h3>
+                <p>字节跳动将推荐建模为序列决策问题,RL 的关键价值在于长期优化。阿里妈妈的 AuctionNet、AIGB 等模型将广告竞价建模为约束马尔可夫决策过程,智能体根据流量价值和剩余预算动态调整出价。</p>
+
+                <h3>4.4 LLM 对齐实践</h3>
+                <p>OpenAI 的 ChatGPT 训练分三步:(1) SFT 监督微调;(2) Reward Modeling;(3) PPO 优化。Anthropic 提出的 Constitutional AI 通过 RLAIF(RL from AI Feedback)减少对大量人工标注的依赖。</p>
+                <hr>
+
+                <h2>5. 学习路线与资源</h2>
+                <h3>5.1 推荐学习路径</h3>
+                <p><strong>入门阶段(1-2个月)</strong>:理解 MDP、Value Function、Bellman 方程,能在简单环境中跑通代码。</p>
+                <p><strong>进阶阶段(2-4个月)</strong>:掌握 DQN、PPO、SAC 核心算法,在 Atari 或 MuJoCo 环境中训练智能体。</p>
+                <p><strong>实战阶段(4-6个月)</strong>:深入 RLHF/LLM 对齐、Offline RL、MARL 或 World Models 等特定方向。</p>
+
+                <h3>5.2 核心资源推荐</h3>
+                <ul>
+                  <li><strong>教材</strong>:Sutton & Barto《RL: An Introduction》、王树森《数学视角的强化学习》</li>
+                  <li><strong>课程</strong>:David Silver RL 课程、UC Berkeley CS285、李宏毅深度强化学习</li>
+                  <li><strong>教程</strong>:OpenAI Spinning Up、Hugging Face Deep RL Course</li>
+                  <li><strong>代码库</strong>:CleanRL、Stable Baselines3</li>
+                  <li><strong>环境</strong>:Gymnasium</li>
+                </ul>
+                <hr>
+
+                <h2>6. 智能体强化学习发展路线图</h2>
+                <h3>6.1 技术演进时间线(1957-2025)</h3>
+                <p><strong>1950s-1990s:理论奠基</strong></p>
+                <ul>
+                  <li>1957:Bellman 提出动态规划</li>
+                  <li>1989:Q-Learning</li>
+                  <li>1992:TD-Gammon</li>
+                </ul>
+
+                <p><strong>2013-2017:深度强化学习崛起</strong></p>
+                <ul>
+                  <li>2013:DQN (DeepMind)</li>
+                  <li>2015:DQN Nature 论文 / TRPO</li>
+                  <li>2016:AlphaGo 击败李世石 / A3C</li>
+                  <li>2017:PPO / AlphaZero</li>
+                </ul>
+
+                <p><strong>2018-2022:大规模应用</strong></p>
+                <ul>
+                  <li>2018:SAC (Soft Actor-Critic)</li>
+                  <li>2019:OpenAI Five (Dota 2) / AlphaStar (StarCraft II)</li>
+                  <li>2020:MuZero</li>
+                  <li>2021:Decision Transformer</li>
+                </ul>
+
+                <p><strong>2023-至今:LLM 时代</strong></p>
+                <ul>
+                  <li>2022:ChatGPT (RLHF)</li>
+                  <li>2023:DPO / IPO / Reflexion / AgentTuning / FireAct</li>
+                  <li>2024:KTO / DreamerV3 / RewardBench</li>
+                  <li>2025:World Models + RL 融合</li>
+                </ul>
+
+                <h3>6.2 技术分支脉络</h3>
+                <p>强化学习算法可归纳为三大技术流派:</p>
+                <ul>
+                  <li><strong>Value-based</strong>:DQN、Double DQN、Dueling DQN (离散动作空间,Atari 游戏)</li>
+                  <li><strong>Policy-based</strong>:TRPO、PPO、A3C、SAC (连续动作空间,机器人控制、LLM 对齐)</li>
+                  <li><strong>Model-based</strong>:Dyna-Q、MuZero、DreamerV3 (学习环境模型,高样本效率)</li>
+                </ul>
+
+                <h3>6.3 未来趋势预测</h3>
+                <p><strong>短期(2025-2026)</strong>:DPO 系列成为主流,Agent 微调标准化</p>
+                <p><strong>中期(2026-2028)</strong>:世界模型大规模落地,多模态 RLHF</p>
+                <p><strong>长期(2028+)</strong>:自主世界模型,通用 Agent 框架</p>
+                <hr>
+
+                <h2>7. 结论</h2>
+                <h3>7.1 核心要点总结</h3>
+                <ol>
+                  <li>从标量奖励到偏好对齐:DPO/IPO/KTO 正在取代 PPO 成为 LLM 对齐的新范式</li>
+                  <li>三大技术分支并行发展:Value-based、Policy-based、Model-based 各有所长</li>
+                  <li>游戏 AI 验证了 RL 的极限能力</li>
+                  <li>Sim-to-Real 是机器人落地的关键</li>
+                  <li>推荐系统是 RL 的商业化主战场</li>
+                  <li>RLHF 定义了 LLM 时代的对齐标准</li>
+                  <li>世界模型是下一个技术高地</li>
+                </ol>
+
+                <h3>7.2 给从业者的建议</h3>
+                <p><strong>入门者</strong>:从 PPO 开始学习,掌握 DPO 原理,熟悉 ReAct/Reflexion 范式</p>
+                <p><strong>进阶者</strong>:深入研究 SAC 和最大熵框架,关注 DreamerV3,实践 AgentTuning/FireAct</p>
+                <p><strong>技术决策者</strong>:评估业务场景是否适合 RL,短期优化选 DPO,建设高质量的奖励模型和偏好数据</p>
+
+                <h3>7.3 展望</h3>
+                <p>强化学习正站在一个历史性的转折点。过去十年,从 DQN 到 ChatGPT,RL 完成了从学术探索到产业应用的跨越。未来,随着世界模型、多模态对齐、具身智能等方向的突破,RL 将成为构建通用人工智能(AGI)的核心技术之一。</p>
+                <hr>
+
+                <p><em>报告由 OpenClaw Agent Swarm 自动生成</em></p>
               </div>
             </div>
           </div>

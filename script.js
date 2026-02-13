@@ -2,149 +2,179 @@
 const chatData = [
   {
     type: 'user',
-    sender: 'orange',
-    time: '2026年2月11日 12:12',
-    content: '@智能体集群 调研强化学习技术并写一篇分析报告,分别从Arxiv、github、飞书文档进行信息检索并对信息汇总,生成一个完整的文档,最后生成一副路线图来展示完整的智能体强化学习发展脉络。'
+    sender: '李大鹏',
+    time: '2026年2月13日 14:05',
+    content: '调研强化学习技术并写一篇分析报告,分别从Arxiv、github、网络渠道、各种教程中进行信息检索并对信息汇总,生成一个完整的文档,最后生成一副路线图来展示完整的智能体强化学习发展脉络，分批生成报告最后汇总。'
   },
   {
     type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:13',
-    content: `收到!这次我会完整执行并输出成本统计。开始调度智能体团队:
+    sender: '冒险小理',
+    time: '2026年2月13日 14:05',
+    content: `好的！这是一个大型调研任务，我用分段策略来执行。
 
-<h3>任务分解:</h3>
+<h3>编排方案:</h3>
+<pre>
+Phase 1: 并行调研 (4 个 researcher)
+├── 🔍 学术论文调研 (Arxiv)
+├── 🔍 开源项目调研 (GitHub)
+├── 🔍 行业应用调研 (网络渠道)
+└── 🔍 学习资源调研 (教程/课程)
+
+Phase 2: 分章节撰写 (writer)
+├── ✍️ 摘要+背景
+├── ✍️ 核心算法
+├── ✍️ 开源生态
+├── ✍️ 应用案例
+└── ✍️ 发展路线图
+
+Phase 3: 汇总
+└── 🎯 脚本拼接完整报告
+</pre>
+
+<strong>开始执行：</strong><br>
+🚀 Phase 1: 并行调研 已派发
+
 <table>
-<tr><th>阶段</th><th>智能体</th><th>任务</th><th>模式</th></tr>
-<tr><td>1</td><td>🔍 researcher ×3</td><td>Arxiv/GitHub/飞书调研</td><td>并行</td></tr>
-<tr><td>2</td><td>✍️ writer</td><td>汇总撰写分析报告</td><td>串行</td></tr>
-<tr><td>3</td><td>🎨 designer</td><td>生成发展路线图</td><td>串行</td></tr>
+<tr><th>智能体</th><th>调研方向</th><th>状态</th></tr>
+<tr><td>🔍 researcher</td><td>Arxiv 学术论文</td><td>⏳ 进行中</td></tr>
+<tr><td>🔍 researcher</td><td>GitHub 开源项目</td><td>⏳ 进行中</td></tr>
+<tr><td>🔍 researcher</td><td>行业应用案例</td><td>⏳ 进行中</td></tr>
+<tr><td>🔍 researcher</td><td>学习资源教程</td><td>⏳ 进行中</td></tr>
 </table>
 
-<strong>阶段 1: 并行调研</strong><br>
-3 个研究员已启动并行调研! 🔍🔍🔍
+<p>4 个调研任务并行执行，预计 2-3 分钟完成。完成后进入 Phase 2 分章节撰写，最后汇总生成完整报告 + 发展路线图。</p>
 
-<pre>
-任务: 🔍 Arxiv 调研      状态: 进行中...  预计完成: ~4分钟
-任务: 🔍 GitHub 调研     状态: 进行中...  预计完成: ~4分钟
-任务: 🔍 飞书/中文调研    状态: 进行中...  预计完成: ~3分钟
-任务: ✍️ 撰写报告        状态: 等待调研完成 预计完成: -
-任务: 🎨 路线图          状态: 等待报告完成 预计完成: -
-</pre>
+<p>✅ <strong>Arxiv 学术论文调研</strong>完成！涵盖 DQN/PPO/SAC 等经典算法，以及 DPO/IPO/KTO 等最新偏好学习方法。</p>
+<p>⏳ 还有 3 个调研任务进行中...</p>
 
-调研完成后我会继续派 writer 写报告、designer 画路线图,最后输出完整的成本统计~`
+<p>✅ <strong>行业应用调研</strong>完成！涵盖游戏 AI (AlphaGo/OpenAI Five)、机器人控制、推荐系统、LLM 对齐等领域的实际案例。</p>
+<p>⏳ 还有 2 个调研任务进行中...</p>`
   },
   {
     type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:15',
-    content: '✅ <strong>GitHub 调研完成</strong> (2m17s, 29.6k tokens)<br><br>覆盖了 Stable-Baselines3、RLlib、TRL、LangChain 等 11 个热门项目,还整理了 4 条学习路径。<br><br>还有 2 个 researcher 在跑(Arxiv + 飞书),等齐了就开始写报告~'
+    sender: '冒险小理',
+    time: '2026年2月13日 14:12',
+    content: '强化学习调研任务正在进行中，已完成 2/4 个调研（Arxiv 学术论文 ✅、行业应用 ✅），还有 GitHub 开源项目和学习资源教程在跑。<br><br>完成后会自动进入撰写和汇总阶段，预计 10 分钟内完成整个报告。'
   },
   {
     type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:15',
-    content: '✅ <strong>飞书/中文调研完成</strong> (2m20s, 20.1k tokens)<br><br>找到 50+ 篇中文资料,包括阿里 ROLL、字节 verl、中科大 Agent-R1 等国内前沿实践,还整理了蘑菇书 EasyRL 等学习资源。<br><br>就差 Arxiv 那边了,马上齐活!🏃'
+    sender: '冒险小理',
+    time: '2026年2月13日 14:16',
+    content: '✅ <strong>GitHub 开源项目调研</strong>完成！<br><br>让我检查一下所有调研文件：'
   },
   {
     type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:16',
-    content: '✅ <strong>Arxiv 调研完成</strong> (3m7s)<br><br>---<br><br><strong>🎉 阶段 1 全部完成!</strong> 现在进入阶段 2:派 writer 撰写报告,然后 designer 画路线图。'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:16',
-    content: `<strong>阶段 2 启动: Writer 正在撰写报告</strong> ✍️
+    sender: '冒险小理',
+    time: '2026年2月13日 14:16',
+    content: `🎉 <strong>4 个调研任务全部完成</strong>！现在进入 <strong>Phase 2: 分章节撰写报告</strong>：
 
-<pre>
-| 阶段  | 智能体                    | 状态       | 耗时    |
-| --- | ---------------------- | -------- | ----- |
-| 1-1 | 🔍 researcher (Arxiv)  | ✅ 完成     | 3m7s  |
-| 1-2 | 🔍 researcher (GitHub) | ✅ 完成     | 2m17s |
-| 1-3 | 🔍 researcher (飞书)     | ✅ 完成     | 2m20s |
-| 2   | ✍️ writer              | 进行中... | ~5分钟  |
-| 3   | 🎨 designer            | 等待中      | -     |
-</pre>
+<p><strong>Phase 2: 分章节撰写</strong> 已派发（5 个 writer 并行）</p>
 
-报告写完后我会派 designer 画路线图,最后输出完整成本统计!`
+<table>
+<tr><th>章节</th><th>内容</th><th>状态</th></tr>
+<tr><td>ch00</td><td>摘要+背景</td><td>⏳ 撰写中</td></tr>
+<tr><td>ch02</td><td>核心算法</td><td>⏳ 撰写中</td></tr>
+<tr><td>ch03</td><td>开源生态</td><td>⏳ 撰写中</td></tr>
+<tr><td>ch04</td><td>应用案例+学习路线</td><td>⏳ 撰写中</td></tr>
+<tr><td>ch06</td><td>路线图+结论</td><td>⏳ 撰写中</td></tr>
+</table>
+
+<p>完成后我会再派发<strong>发展路线图</strong>的生成任务，最后汇总成完整报告。</p>`
   },
   {
     type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:18',
-    content: '✅ <strong>报告撰写完成</strong> (1m32s, 26.9k tokens)<br><br>整合了三方资料,完成了 4000+ 字的分析报告,重点覆盖了 DeepSeek-R1、o1、DPO、DreamerV3 等最新进展。<br><br>---<br><br><strong>阶段 3: 派 Designer 生成路线图</strong>'
+    sender: '冒险小理',
+    time: '2026年2月13日 14:17',
+    content: '✅ <strong>开源生态章节</strong>完成，包含 6 个主流框架对比和 8 种场景的推荐方案。<br><br>⏳ 还有 4 个章节在写...'
   },
   {
     type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:18',
-    content: `<strong>阶段 3 启动: Designer 正在生成路线图</strong> 🎨
-
-<pre>
-| 阶段  | 智能体           | 模型           | 状态       | 耗时    | Tokens |
-| --- | ------------- | ------------ | -------- | ----- | ------ |
-| 1-1 | 🔍 researcher | GLM          | ✅ 完成     | 3m7s  | ~30k   |
-| 1-2 | 🔍 researcher | GLM          | ✅ 完成     | 2m17s | 29.6k  |
-| 1-3 | 🔍 researcher | GLM          | ✅ 完成     | 2m20s | 20.1k  |
-| 2   | ✍️ writer     | Gemini       | ✅ 完成     | 1m32s | 26.9k  |
-| 3   | 🎨 designer   | Gemini-Image | 进行中... | -     | -      |
-</pre>
-
-路线图完成后我会发送所有文件并输出完整的成本统计!`
+    sender: '冒险小理',
+    time: '2026年2月13日 14:17',
+    content: '✅ <strong>摘要+背景章节</strong>也完成了，梳理了从 Bellman 动态规划到 DPO 的技术演进脉络。<br><br>⏳ 还有 3 个章节在写（核心算法 + 应用案例 + 路线图）...'
   },
   {
     type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月11日 12:20',
-    content: `<strong>🎉 全部完成!</strong>
+    sender: '冒险小理',
+    time: '2026年2月13日 14:17',
+    content: '✅ <strong>核心算法章节</strong>完成，包含经典算法对比表和 RLHF→DPO→IPO/KTO 演进路径图。<br><br>⏳ 还有 2 个章节在写（应用案例 + 路线图）...'
+  },
+  {
+    type: 'agent',
+    sender: '冒险小理',
+    time: '2026年2月13日 14:18',
+    content: '✅ <strong>应用案例+学习路线章节</strong>完成！<br><br>🎉 <strong>所有章节撰写完毕</strong>，现在生成发展路线图并汇总报告：'
+  },
+  {
+    type: 'agent',
+    sender: '冒险小理',
+    time: '2026年2月13日 14:18',
+    content: `<strong>Phase 2 完成进度</strong>：
+
+<table>
+<tr><th>章节</th><th>状态</th></tr>
+<tr><td>ch00-摘要+背景</td><td>✅</td></tr>
+<tr><td>ch02-核心算法</td><td>✅</td></tr>
+<tr><td>ch03-开源生态</td><td>✅</td></tr>
+<tr><td>ch04-应用案例+学习路线</td><td>✅</td></tr>
+<tr><td>ch06-路线图+结论</td><td>⏳ 撰写中</td></tr>
+</table>
+
+<p>路线图完成后立即汇总并发送完整报告。</p>`
+  },
+  {
+    type: 'agent',
+    sender: '冒险小理',
+    time: '2026年2月13日 14:19',
+    content: '✅ <strong>发展路线图+结论</strong>完成！包含 1957-2025 完整时间线和三大技术分支脉络图。<br><br>现在汇总所有章节：<br><br>报告已生成！现在发送给你：'
+  },
+  {
+    type: 'agent',
+    sender: '冒险小理',
+    time: '2026年2月13日 14:19',
+    content: `✅ <strong>报告已发送！</strong>
+
+<h3>📄 智能体强化学习技术深度分析报告</h3>
+
+<ul>
+<li>578 行，约 38KB（~10000 字）</li>
+<li>完整发展路线图（1957-2025）</li>
+<li>三大技术分支脉络图</li>
+</ul>
 
 <h3>📊 智能体团队执行统计</h3>
 
-<strong>执行明细</strong>
 <table>
-<tr><th>阶段</th><th>智能体</th><th>任务</th><th>模型</th><th>耗时</th><th>Tokens (in/out)</th><th>状态</th></tr>
-<tr><td>1-1</td><td>🔍 researcher</td><td>Arxiv调研</td><td>GLM</td><td>3m7s</td><td>~30k/1k</td><td>✅</td></tr>
-<tr><td>1-2</td><td>🔍 researcher</td><td>GitHub调研</td><td>GLM</td><td>2m17s</td><td>29.6k/678</td><td>✅</td></tr>
-<tr><td>1-3</td><td>🔍 researcher</td><td>中文调研</td><td>GLM</td><td>2m20s</td><td>20.1k/801</td><td>✅</td></tr>
-<tr><td>2</td><td>✍️ writer</td><td>撰写报告</td><td>Gemini</td><td>1m32s</td><td>26.9k/397</td><td>✅</td></tr>
-<tr><td>3</td><td>🎨 designer</td><td>路线图</td><td>-</td><td>-</td><td>(主智能体补充)</td><td>✅</td></tr>
+<tr><th>阶段</th><th>任务</th><th>智能体</th><th>耗时</th></tr>
+<tr><td><strong>调研</strong></td><td>Arxiv/GitHub/行业/教程</td><td>🔍×4</td><td>~2min (并行)</td></tr>
+<tr><td><strong>撰写</strong></td><td>摘要+5章节+路线图</td><td>✍️×5</td><td>~3min (并行)</td></tr>
+<tr><td><strong>汇总</strong></td><td>脚本拼接</td><td>🎯</td><td>&lt;1s</td></tr>
 </table>
 
-<strong>成本汇总</strong>
-<pre>
-| 项目              | 数值                           |
-| --------------- | ---------------------------- |
-| 总耗时             | 9m16s(串行累计)                  |
-| 实际等待            | ~5m(并行优化后)                   |
-| 总 Tokens       | ~107k input / ~2.9k output   |
-</pre>
+<p><strong>总耗时</strong>：约 <strong>15 分钟</strong></p>
 
-<strong>成本对比分析</strong>
-<pre>
-| 方案                                  | Input Cost | Output Cost | 总计       |
-| ----------------------------------- | ---------- | ----------- | -------- |
-| 全用 Claude Opus ($5/$25/M)         | $0.535     | $0.073      | $0.61    |
-| 智能体分工(实际)                          |            |             |          |
-| - 3× researcher (GLM $0.014/M)     | $0.0011    | $0.00003    | $0.001   |
-| - 1× writer (Gemini $1.25/$10/M)   | $0.034     | $0.004      | $0.038   |
-| 实际总成本                               |            |             | $0.04    |
-</pre>
+<h3>报告结构：</h3>
 
-<strong>效率分析</strong>
+<ol>
+<li>摘要 + 研究背景</li>
+<li>核心算法（DQN→PPO→DPO 演进）</li>
+<li>开源生态（6 大框架对比）</li>
+<li>行业应用（游戏/机器人/推荐/LLM对齐）</li>
+<li>学习路线（入门→进阶→实战）</li>
+<li>发展路线图 + 结论</li>
+</ol>`
+  },
+  {
+    type: 'agent',
+    sender: '冒险小理',
+    time: '2026年2月13日 14:24',
+    content: `✅ <strong>路线图已发送！</strong>
+
+<h3>📊 包含：</h3>
 <ul>
-<li><strong>串行执行预估</strong>: ~12分钟</li>
-<li><strong>并行执行实际</strong>: ~5分钟</li>
-<li><strong>节省时间</strong>: 7分钟 (58%)</li>
-<li><strong>成本节省</strong>: $0.57 (93%)</li>
-</ul>
-
-<strong>交付成果:</strong>
-<ul>
-<li>✅ rl-final-report.md - 完整分析报告</li>
-<li>✅ rl-roadmap-final.html - 可视化路线图</li>
-<li>✅ rl-report-github.md - GitHub调研</li>
-<li>✅ rl-report-feishu.md - 中文调研</li>
+<li>四个发展时期（1957-2025）的时间线</li>
+<li>关键里程碑节点（Bellman → DQN → AlphaGo → PPO → ChatGPT RLHF → DPO）</li>
+<li>三大技术分支（Value-Based / Policy-Based / Model-Based）</li>
 </ul>`
   }
 ];
@@ -192,11 +222,16 @@ function toggleSwarm() {
 let currentTab = 'roadmap';
 
 function showTab(tabName) {
+  console.log('showTab called with:', tabName);
   // 更新按钮状态
   const buttons = document.querySelectorAll('.control-btn:not(:last-child)');
   buttons.forEach(btn => {
     btn.classList.remove('active');
-    if (btn.textContent.includes(tabName === 'roadmap' ? '路线图' : '分析报告')) {
+    const btnText = btn.textContent;
+    if ((tabName === 'roadmap' && btnText.includes('路线图')) ||
+        (tabName === 'report' && btnText.includes('完整报告')) ||
+        (tabName === 'github' && btnText.includes('GitHub')) ||
+        (tabName === 'feishu' && btnText.includes('中文调研'))) {
       btn.classList.add('active');
     }
   });
@@ -207,118 +242,519 @@ function showTab(tabName) {
     tab.classList.remove('active');
     if (tab.id === tabName) {
       tab.classList.add('active');
+      console.log('Activated tab:', tabName);
     }
   });
 
   currentTab = tabName;
 
-  // 如果切换到报告,加载报告内容
+  // 加载对应的 Markdown 内容
   if (tabName === 'report' && !document.getElementById('reportContent').innerHTML) {
-    loadReport();
+    console.log('Loading report content...');
+    loadReportContent('reportContent');
+  } else if (tabName === 'github' && !document.getElementById('githubContent').innerHTML) {
+    console.log('Loading github content...');
+    loadReportContent('githubContent');
+  } else if (tabName === 'feishu' && !document.getElementById('feishuContent').innerHTML) {
+    console.log('Loading feishu content...');
+    loadReportContent('feishuContent');
   }
 }
 
-// 加载报告内容(简化版)
-function loadReport() {
-  const reportContent = document.getElementById('reportContent');
-  reportContent.innerHTML = `
-    <h1>智能体强化学习技术分析报告</h1>
-    <p><strong>报告日期:</strong> 2026年2月11日</p>
-    <p><strong>关键词:</strong> 强化学习, Agent, LLM, RLHF, World Models, DeepSeek-R1, o1</p>
+// Markdown 转 HTML 函数
+function markdownToHtml(markdown) {
+  // 先处理代码块，避免其他规则影响
+  const codeBlocks = [];
+  let html = markdown.replace(/```[\s\S]*?```/g, function(match) {
+    const index = codeBlocks.length;
+    codeBlocks.push('<pre><code>' + match.slice(3, -3).trim() + '</code></pre>');
+    return `__CODE_BLOCK_${index}__`;
+  });
 
-    <h2>摘要</h2>
-    <p>本报告旨在为技术管理者提供关于智能体强化学习(Agent RL)技术的全面分析。随着大语言模型(LLM)的爆发,强化学习(RL)已从传统的游戏控制领域跨越至通用智能体构建的核心舞台。报告首先回顾了从1989年Q-learning提出至2025年推理增强RL(Reasoning RL)的36年发展历程,清晰勾勒出技术演进的脉络。</p>
+  // 处理行内代码
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
 
-    <h2>一、强化学习发展历程(1989-2025)</h2>
-    <p>强化学习的发展史是一部从"试错学习"到"智能决策"的进化史。我们可以将其划分为四个关键阶段:</p>
+  // 处理标题
+  html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
+  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+  html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
 
-    <h3>1.1 基础理论奠基期(1989-2012)</h3>
-    <p>这一时期确立了RL的数学基础。1989年Watkins提出的<strong>Q-learning</strong>为无模型(Model-free)RL奠定了基石,证明了智能体可以在不了解环境动态的情况下学习最优策略。</p>
+  // 处理粗体
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-    <h3>1.2 深度强化学习爆发期(2013-2016)</h3>
-    <p>2013年,DeepMind的<strong>DQN(Deep Q-Network)</strong>横空出世,首次将深度神经网络与Q-learning结合,在Atari游戏中展现了超越人类的表现,标志着深度强化学习(Deep RL)时代的到来。</p>
+  // 处理链接
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
 
-    <h3>1.3 算法成熟与分化期(2017-2022)</h3>
-    <p>这一阶段,算法向着"更稳定、更高效、更通用"演进:</p>
-    <ul>
-      <li><strong>PPO(2017):</strong> OpenAI提出的近端策略优化算法,成为了RL领域的"瑞士军刀",后来更是成为ChatGPT训练的核心基石。</li>
-      <li><strong>SAC(2018):</strong> 引入最大熵框架,显著提升了智能体在复杂环境中的探索能力和鲁棒性。</li>
-      <li><strong>MuZero(2020):</strong> 不再依赖规则,而是通过学习环境模型来进行规划。</li>
-    </ul>
+  // 处理分隔线
+  html = html.replace(/^---$/gim, '<hr>');
 
-    <h3>1.4 大模型与推理RL新纪元(2023-2025)</h3>
-    <p>随着ChatGPT的发布,RL找到了新的主战场——<strong>LLM对齐</strong>:</p>
-    <ul>
-      <li><strong>RLHF(2023):</strong> 成为让LLM遵循人类指令的标准范式。</li>
-      <li><strong>DPO(2023):</strong> 斯坦福团队提出的直接偏好优化,跳过奖励模型训练,简化了对齐流程。</li>
-      <li><strong>推理RL(2024-2025):</strong> 以<strong>OpenAI o1</strong>和<strong>DeepSeek-R1</strong>为代表,RL不再仅用于对齐,而是被用于激发模型的深度推理能力。</li>
-    </ul>
+  // 处理无序列表
+  html = html.replace(/^[\*\-] (.*$)/gim, '<li>$1</li>');
 
-    <h2>二、核心算法演进</h2>
-    <p>理解核心算法的演进逻辑,有助于把握技术选型的关键:</p>
+  // 处理有序列表
+  html = html.replace(/^\d+\.\s+(.*$)/gim, '<li>$1</li>');
 
-    <h3>2.1 DQN: 价值学习的里程碑</h3>
-    <p>DQN的核心贡献在于解决了RL在处理高维感知输入(如图像)时的不稳定性。它引入了<strong>经验回放(Experience Replay)</strong>打破数据相关性,以及<strong>目标网络(Target Network)</strong>稳定训练目标。</p>
+  // 包裹连续的 li 为 ul
+  html = html.replace(/(<li>.*?<\/li>\s*)+/gs, function(match) {
+    return '<ul>' + match + '</ul>';
+  });
 
-    <h3>2.2 PPO: 策略优化的工业标准</h3>
-    <p>PPO通过引入<strong>裁剪(Clip)机制</strong>,限制了每次策略更新的幅度,防止模型因更新过大而崩溃。这种"保守但稳健"的策略使其对超参数不敏感,极易落地。</p>
+  // 恢复代码块
+  codeBlocks.forEach((block, index) => {
+    html = html.replace(`__CODE_BLOCK_${index}__`, block);
+  });
 
-    <h3>2.3 SAC: 最大熵探索的巅峰</h3>
-    <p>Soft Actor-Critic (SAC) 在最大化累积奖励的同时,还最大化策略的<strong>熵(Entropy)</strong>。这意味着智能体在完成任务的同时,会尽可能保持动作的随机性。</p>
+  // 处理段落
+  const lines = html.split('\n');
+  let result = [];
+  let inBlock = false;
 
-    <h3>2.4 DPO: 大模型时代的极简主义</h3>
-    <p>传统的RLHF需要训练一个奖励模型(Reward Model),然后用PPO优化策略,流程复杂且不稳定。<strong>DPO(Direct Preference Optimization)</strong>从数学上证明了可以直接通过优化策略来满足人类偏好,无需显式的奖励模型。</p>
+  for (let line of lines) {
+    line = line.trim();
+    if (!line) continue;
 
-    <h2>三、前沿方向</h2>
+    if (line.match(/^<(h\d|hr|ul|pre|code|table)/)) {
+      inBlock = true;
+      result.push(line);
+    } else if (line.match(/<\/(h\d|ul|pre|code|table)>$/)) {
+      result.push(line);
+      inBlock = false;
+    } else if (inBlock) {
+      result.push(line);
+    } else {
+      result.push('<p>' + line + '</p>');
+    }
+  }
 
-    <h3>3.1 RLHF与RLAIF</h3>
-    <p>从人类反馈到AI反馈,实现了反馈的自动化。</p>
+  return result.join('\n');
+}
 
-    <h3>3.2 世界模型: DreamerV3的通用性</h3>
-    <p>世界模型的核心思想是:智能体应该在脑海中构建一个环境模型,并在"梦境"中进行规划和训练。DreamerV3证明了RL算法可以像LLM一样具有通用性,无需为每个任务调参。</p>
+// 加载报告内容
+function loadReportContent(contentId) {
+  console.log('loadReportContent called with:', contentId);
+  const element = document.getElementById(contentId);
+  if (!element) {
+    console.error('Element not found:', contentId);
+    return;
+  }
 
-    <h3>3.3 推理RL: 2025年的焦点</h3>
-    <p>这是当前最激动人心的方向。<strong>OpenAI o1</strong>通过大规模RL训练,让模型学会了在回答前进行长时间的"隐式思维链"推理。<strong>DeepSeek-R1</strong>证明了<strong>纯强化学习(Pure RL)</strong>就能激发LLM涌现出自我反思和验证的能力。</p>
+  let content = '';
 
-    <h2>四、开源生态与产业现状</h2>
+  if (contentId === 'reportContent') {
+    // 完整报告内容 (节选主要部分)
+    content = `
+# 智能体强化学习技术分析报告
 
-    <h3>4.1 核心框架</h3>
-    <ul>
-      <li><strong>Stable-Baselines3:</strong> 最成熟的RL库,提供DQN/PPO/SAC等实现</li>
-      <li><strong>RLlib (Ray):</strong> 分布式RL框架,适合大规模训练</li>
-      <li><strong>Hugging Face TRL:</strong> 专注于LLM的RL微调</li>
-    </ul>
+**报告日期**: 2026年2月11日
+**报告类型**: 技术综述与趋势分析
+**关键词**: 强化学习, Agent, LLM, RLHF, World Models, DeepSeek-R1, o1
 
-    <h3>4.2 国内实践</h3>
-    <ul>
-      <li><strong>阿里 ROLL:</strong> 大规模离线RL平台</li>
-      <li><strong>字节 verl:</strong> 高效的LLM RLHF训练框架</li>
-      <li><strong>中科大 Agent-R1:</strong> 开源的推理RL实现</li>
-    </ul>
+---
 
-    <h2>五、未来展望</h2>
-    <p>基于当前技术趋势,我们对2026年及未来的技术走向进行展望:</p>
-    <ul>
-      <li>推理RL将成为提升LLM能力的标配</li>
-      <li>世界模型与RL的结合将推动具身智能发展</li>
-      <li>安全对齐将是下一阶段的竞争高地</li>
-      <li>多智能体协作将从理论走向实用</li>
-    </ul>
+## 摘要
 
-    <p style="text-align: center; margin-top: 3rem; color: var(--text-secondary);">
-      <strong>--- 报告完 ---</strong><br>
-      查看完整版请参考原始文档
-    </p>
-  `;
+本报告旨在为技术管理者提供关于智能体强化学习(Agent RL)技术的全面分析。随着大语言模型(LLM)的爆发,强化学习(RL)已从传统的游戏控制领域跨越至通用智能体构建的核心舞台。
+
+---
+
+## 一、强化学习发展历程(1989-2025)
+
+强化学习的发展史是一部从"试错学习"到"智能决策"的进化史。我们可以将其划分为四个关键阶段:
+
+### 1.1 基础理论奠基期(1989-2012)
+这一时期确立了RL的数学基础。1989年Watkins提出的**Q-learning**为无模型(Model-free)RL奠定了基石,证明了智能体可以在不了解环境动态的情况下学习最优策略。
+
+### 1.2 深度强化学习爆发期(2013-2016)
+2013年,DeepMind的**DQN(Deep Q-Network)**横空出世,首次将深度神经网络与Q-learning结合,在Atari游戏中展现了超越人类的表现,标志着深度强化学习(Deep RL)时代的到来。
+
+### 1.3 算法成熟与分化期(2017-2022)
+这一阶段,算法向着"更稳定、更高效、更通用"演进:
+- **PPO(2017)**: OpenAI提出的近端策略优化算法,成为了RL领域的"瑞士军刀"
+- **SAC(2018)**: 引入最大熵框架,显著提升了智能体的探索能力
+- **MuZero(2020)**: 通过学习环境模型来进行规划
+
+### 1.4 大模型与推理RL新纪元(2023-2025)
+随着ChatGPT的发布,RL找到了新的主战场——**LLM对齐**:
+- **RLHF(2023)**: 成为让LLM遵循人类指令的标准范式
+- **DPO(2023)**: 直接偏好优化,简化了对齐流程
+- **推理RL(2024-2025)**: 以**OpenAI o1**和**DeepSeek-R1**为代表,激发模型的深度推理能力
+
+---
+
+## 二、核心算法演进
+
+### 2.1 DQN: 价值学习的里程碑
+DQN引入了**经验回放(Experience Replay)**和**目标网络(Target Network)**,解决了高维感知输入的不稳定性问题。
+
+### 2.2 PPO: 策略优化的工业标准
+PPO通过**裁剪(Clip)机制**,限制每次策略更新的幅度,防止训练崩溃,成为LLM RLHF的首选算法。
+
+### 2.3 SAC: 最大熵探索
+在最大化累积奖励的同时最大化策略的**熵(Entropy)**,极强的探索能力,适用于机器人控制等复杂任务。
+
+### 2.4 DPO: 大模型时代的极简主义
+直接通过优化策略来满足人类偏好,无需显式的奖励模型,成为2024-2025年开源LLM对齐的主流选择。
+
+---
+
+## 三、前沿方向
+
+### 3.1 RLHF与RLAIF
+从人类反馈到AI反馈,实现反馈的自动化。
+
+### 3.2 世界模型: DreamerV3的通用性
+**DreamerV3**证明了RL算法可以像LLM一样具有通用性,无需为每个任务调参。
+
+### 3.3 多智能体强化学习(MARL)
+从AlphaStar到LLM多角色协作,MARL变得至关重要。
+
+### 3.4 推理RL: 2025年的焦点
+**OpenAI o1**和**DeepSeek-R1**通过大规模RL训练,让模型学会深度推理,实现数学和代码能力的质的飞跃。
+
+---
+
+## 四、开源生态与工具链
+
+### 核心训练框架
+- **Gymnasium**: OpenAI Gym的官方继承者,RL环境的标准API
+- **Stable-Baselines3**: 基于PyTorch的经典算法实现库
+- **Ray/RLlib**: 工业级分布式RL框架
+
+### LLM与RLHF工具
+- **Hugging Face TRL**: 集成SFT、Reward Modeling、PPO和DPO的全栈库
+- **OpenRLHF**: 支持70B+级别模型的全参数训练
+
+---
+
+## 五、国内发展现状
+
+### 头部企业布局
+- **字节跳动**: DeepSeek-R1、verl框架
+- **阿里巴巴**: ROLL库、通义千问RLHF
+- **腾讯**: 王者荣耀"绝悟"AI、机器人控制
+
+### 学术与教育
+清华、北大、中科大、复旦等高校在顶会上表现活跃,《蘑菇书EasyRL》等降低了中文开发者的入门门槛。
+
+---
+
+## 六、未来展望
+
+- **推理时间扩展**: 从"预训练规模"转向"推理计算规模"
+- **通用世界模型**: 结合视频生成模型和RL
+- **离线强化学习**: 工业化落地的关键
+- **统一Agent架构**: 端到端的神经网络融合
+
+---
+
+**报告撰写**: OpenClaw Writer Agent
+`;
+  } else if (contentId === 'githubContent') {
+    // GitHub调研报告内容 (节选)
+    content = `
+# GitHub强化学习相关项目和框架调研报告
+
+> 调研时间: 2026-02-11
+> 数据来源: GitHub及社区文档
+
+---
+
+## 一、核心框架(Core Frameworks)
+
+### 1.1 Gymnasium
+- **GitHub仓库**: Farama-Foundation/Gymnasium
+- **Star数**: ⭐ 11.2k
+- **简介**: OpenAI Gym官方维护分支,单智能体强化学习环境API标准
+- **核心特点**:
+  - 标准API: 为RL环境提供统一的接口标准
+  - 向后兼容: 兼容旧版Gym环境
+  - 丰富环境: 包含经典控制、Atari游戏、MuJoCo等
+- **适用场景**: RL算法研究、教育教学、环境测试基准
+
+### 1.2 Stable-Baselines3 (SB3)
+- **GitHub仓库**: DLR-RM/stable-baselines3
+- **Star数**: ⭐ 12k
+- **简介**: 基于PyTorch的可靠强化学习算法实现集合
+- **核心特点**:
+  - 生产级质量: 德国宇航中心(DLR)开发
+  - 算法丰富: PPO、DQN、A2C、SAC、TD3、DDPG等
+  - 文档完善: 详尽的文档和教程
+  - 易于使用: 简洁的API,三行代码即可训练
+- **适用场景**: 实际应用原型、算法对比、新手入门
+
+### 1.3 RLlib
+- **GitHub仓库**: ray-project/ray (RLlib部分)
+- **Star数**: ⭐ 30k+ (Ray整体项目)
+- **简介**: 行业级、高度可扩展的强化学习库
+- **核心特点**:
+  - 分布式训练: 基于Ray分布式框架
+  - 生产就绪: 容错设计,支持fault tolerance
+  - 多智能体: 原生支持多智能体RL
+  - 业界应用: 被OpenAI、Amazon等公司使用
+- **适用场景**: 大规模生产环境、多智能体系统
+
+### 1.4 CleanRL
+- **GitHub仓库**: vwxyzjn/cleanrl
+- **Star数**: ⭐ 9k
+- **简介**: 高质量单文件实现深度强化学习算法
+- **核心特点**:
+  - 单文件架构: 每个算法都在一个Python文件中
+  - 研究友好: 代码与数学描述高度一致
+  - 可读性强: 结构清晰,变量命名直观
+- **适用场景**: 学术研究、算法理解、快速原型
+
+---
+
+## 二、LLM与RLHF专项工具
+
+### 2.1 Hugging Face TRL (Transformer Reinforcement Learning)
+- **GitHub仓库**: huggingface/trl
+- **Star数**: ⭐ 15.2k
+- **简介**: 专注于LLM的全栈强化学习训练库
+- **支持功能**:
+  - SFT (Supervised Fine-Tuning)
+  - Reward Modeling
+  - PPO训练
+  - DPO (Direct Preference Optimization)
+  - ORPO (Odds Ratio Preference Optimization)
+
+### 2.2 OpenRLHF
+- **GitHub仓库**: OpenRLHF/OpenRLHF
+- **Star数**: ⭐ 3.9k
+- **简介**: 高性能RLHF训练框架
+- **核心特点**:
+  - 支持70B+级别模型全参数训练
+  - 基于Ray和vLLM构建
+  - 解决PPO在大模型上的显存和调度瓶颈
+
+---
+
+## 三、Agent开发框架
+
+### 3.1 LangChain
+- **GitHub仓库**: langchain-ai/langchain
+- **Star数**: ⭐ 100k+
+- **简介**: 最流行的LLM应用开发框架
+- **核心组件**: Chains、Agents、Tools
+
+### 3.2 AutoGPT
+- **GitHub仓库**: Significant-Gravitas/AutoGPT
+- **Star数**: ⭐ 170k+
+- **简介**: 全自动Agent系统
+- **设计理念**: 目标导向的自主任务执行
+
+---
+
+## 四、学习资源
+
+### 4.1 Spinning Up in Deep RL
+- **来源**: OpenAI
+- **内容**: 深度强化学习教育资源
+
+### 4.2 Deep RL Course
+- **来源**: Hugging Face
+- **内容**: 从零开始的深度强化学习课程
+
+### 4.3 Awesome Reinforcement Learning
+- **类型**: 资源合集
+- **包含**: 论文、代码、教程、框架等
+
+---
+
+**调研完成**: OpenClaw Researcher Agent
+`;
+  } else if (contentId === 'feishuContent') {
+    // 中文调研报告内容 (节选)
+    content = `
+# 强化学习中文资料研究报告
+
+**报告时间**: 2026年2月11日
+**研究方法**: 网络检索 + 飞书文档调研
+**关键词**: 强化学习、Reinforcement Learning、RLHF、智能体训练
+
+---
+
+## 一、核心文档与文章
+
+### 1.1 强化学习基础教程类
+
+- **蘑菇书EasyRL** (Datawhale)
+  - 经典中文强化学习教程
+  - 配套李宏毅老师视频课程
+
+- **动手学强化学习** (伯禹学习平台)
+  - 张伟楠老师强化学习网课
+  - 包含实践代码
+
+- **强化学习导论** (Qiwihui)
+  - 《Reinforcement Learning: An Introduction》第二版中文翻译
+
+- **Hugging Face强化学习课程中文版**
+  - 官方课程中文翻译
+  - 最新的深度强化学习内容
+
+### 1.2 RLHF(人类反馈强化学习)专题
+
+- **100_RLHF原理与实践** (腾讯云开发者)
+  - 详细讲解RLHF原理、实现流程及2025最新进展
+
+- **什么是人类反馈的强化学习(RLHF)** (IBM中文)
+  - IBM官方技术文档,权威定义与解释
+
+- **一文读懂「RLHF」** (CSDN)
+  - 通俗易懂的概念解释
+  - 浏览量达4.6万
+
+- **第六章:强化学习与人类反馈**
+  - 深入探讨PPO、DPO等主流算法实现细节
+
+### 1.3 Agent RL(智能体强化学习)专题
+
+- **Agentic RL实战:从入门到实战!** (知乎)
+  - 实战导向,少废话多代码
+
+- **【万字长文】AgentRL框架详解** (CSDN)
+  - 多轮多任务智能体强化学习的系统介绍
+
+- **100页Agentic RL综述** (搜狐)
+  - 牛津、新国立等联合定义的权威综述
+
+- **AgentGym-RL:复旦大学智能体框架**
+  - 游戏环境中的智能体训练系统
+
+### 1.4 国内企业实践案例
+
+- **阿里巴巴开源AI技术:强化学习技术演进**
+  - 从2015年开始到产业化的完整历程
+
+- **突破大模型推理瓶颈:字节跳动verl实践**
+  - 企业级强化学习框架案例
+
+- **阿里团队发表ROLL:强化学习优化库**
+  - 专为大规模学习设计
+
+- **字节跳动AGILE框架**
+  - 端到端LLM Agent优化
+
+### 1.5 大模型RLHF训练实战
+
+- **一文搞懂大模型训练** (Qwen3)
+  - 从提示词到MoE、RLHF全流程
+
+- **大语言模型 RLHF - ChatGLM代码逐行解读**
+  - ChatGLM的实际实现分析
+
+- **使用Huggingface创建RLHF训练流程**
+  - 完整的Hugging Face实践指南
+
+---
+
+## 二、核心概念提取
+
+### 2.1 强化学习核心组件
+
+- **智能体(Agent)**: 执行动作并从环境中学习的实体
+- **环境(Environment)**: 接收动作并返回状态和奖励
+- **状态(State)**: 环境在某一时刻的表示
+- **动作(Action)**: 智能体可以执行的行为
+- **奖励(Reward)**: 环境对智能体动作的反馈信号
+- **策略(Policy)**: 从状态到动作的映射函数
+
+### 2.2 RLHF详解
+
+**RLHF (Reinforcement Learning from Human Feedback)** 是一种机器学习技术,利用人类的直接反馈来训练"奖励模型",然后利用该模型通过强化学习来优化AI系统的性能。
+
+**关键步骤**:
+1. 监督微调(SFT): 让模型学会基本的对话能力
+2. 奖励模型训练: 利用人类偏好数据训练奖励模型
+3. 强化学习优化: 使用PPO等算法优化模型
+
+### 2.3 主流算法对比
+
+- **PPO**: 稳定性强,工业标准
+- **DPO**: 简化流程,无需奖励模型
+- **ORPO**: 单阶段对齐,效率更高
+
+---
+
+## 三、国内技术生态
+
+### 3.1 头部企业
+
+- **字节跳动**: DeepSeek-R1、verl框架
+- **阿里巴巴**: ROLL库、通义千问
+- **腾讯**: 绝悟AI、机器人控制
+- **百度**: 文心一言RLHF实践
+
+### 3.2 学术机构
+
+- **清华大学**: 基础理论研究
+- **北京大学**: 安全RL
+- **中国科学技术大学**: Agent-R1
+- **复旦大学**: AgentGym框架
+
+### 3.3 教育资源
+
+- **Datawhale**: 蘑菇书EasyRL
+- **伯禹平台**: 动手学强化学习
+- **B站**: 大量中文视频教程
+
+---
+
+## 四、技术趋势
+
+### 4.1 从RLHF到RLAIF
+利用AI模型自身来提供反馈,减少人工标注成本。
+
+### 4.2 推理RL的兴起
+o1和R1证明了RL在提升模型推理能力方面的巨大潜力。
+
+### 4.3 多智能体协作
+从单体Agent到多Agent协作系统的演进。
+
+### 4.4 具身智能应用
+RL在机器人控制、自动驾驶等领域的落地。
+
+---
+
+**调研完成**: OpenClaw Researcher Agent (中文方向)
+`;
+  }
+
+  // 转换为HTML并显示
+  console.log('Content length:', content.length);
+
+  // 先测试直接显示纯文本
+  if (content.length > 0) {
+    element.innerHTML = '<pre style="white-space: pre-wrap; color: white; padding: 20px;">' + content.substring(0, 500) + '...</pre>';
+    console.log('Displayed first 500 chars as plain text');
+  } else {
+    console.error('Content is empty!');
+  }
+
+  // const html = markdownToHtml(content);
+  // console.log('HTML length:', html.length);
+  // element.innerHTML = html;
+  // console.log('Content loaded successfully');
 }
 
 // 在新标签打开当前内容
 function openInNewTab() {
   if (currentTab === 'roadmap') {
-    window.open('../RL_survey/rl-roadmap-final.html', '_blank');
-  } else {
-    window.open('../RL_survey/rl-final-report.md', '_blank');
+    window.open('rl-roadmap-final.html', '_blank');
+  } else if (currentTab === 'report') {
+    window.open('rl-final-report.md', '_blank');
+  } else if (currentTab === 'github') {
+    window.open('rl-report-github.md', '_blank');
+  } else if (currentTab === 'feishu') {
+    window.open('rl-report-feishu.md', '_blank');
   }
+}
+
+// 打开指定文件
+function openFile(filePath) {
+  window.open(filePath, '_blank');
 }
 
 // 页面加载完成后初始化

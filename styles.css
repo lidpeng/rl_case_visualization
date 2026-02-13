@@ -37,7 +37,7 @@ body {
 
 /* 左侧对话框 - 与第一个项目相同 */
 .chat-panel {
-  width: 624px;
+  width: 717px;
   background: var(--bg-chat);
   border-radius: 16px;
   display: flex;
@@ -124,6 +124,9 @@ body {
   border-radius: 12px;
   line-height: 1.6;
   font-size: 0.95rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .message.user .message-content {
@@ -145,10 +148,21 @@ body {
 .message-content ul {
   margin-left: 1.5rem;
   margin-top: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.message-content ol {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .message-content li {
   margin-bottom: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .message-content code {
@@ -203,6 +217,7 @@ body {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-height: 650px;
 }
 
 .swarm-section.collapsed .swarm-content {
@@ -245,7 +260,7 @@ body {
 }
 
 .swarm-content {
-  max-height: 700px;
+  max-height: 570px;
   overflow-y: auto;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -370,6 +385,45 @@ body {
   gap: 1rem;
 }
 
+/* 文件展示网格 */
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.file-card {
+  background: var(--bg-chat);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.file-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+}
+
+.file-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  word-break: break-all;
+}
+
+.file-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
 .stat-item {
   background: var(--bg-chat);
   border-radius: 8px;
@@ -486,6 +540,8 @@ body {
   padding: 2rem;
   color: var(--text-primary);
   line-height: 1.8;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .report-content h1 {
@@ -511,16 +567,22 @@ body {
 .report-content p {
   margin-bottom: 1rem;
   color: var(--text-secondary);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .report-content ul,
 .report-content ol {
   margin: 1rem 0 1rem 2rem;
   color: var(--text-secondary);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .report-content li {
   margin-bottom: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .report-content code {

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能体强化学习发展路线图</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            text-align: center;
+            color: #8892b0;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #3b82f6, #10b981, #f59e0b, #8b5cf6);
+            border-radius: 2px;
+        }
+        .era {
+            margin-bottom: 60px;
+        }
+        .era-title {
+            text-align: center;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+        }
+        .era-1 .era-title { background: linear-gradient(90deg, #3b82f6, #1d4ed8); }
+        .era-2 .era-title { background: linear-gradient(90deg, #10b981, #059669); }
+        .era-3 .era-title { background: linear-gradient(90deg, #f59e0b, #d97706); }
+        .era-4 .era-title { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+        .events {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .event {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .event:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .event-year {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .era-1 .event-year { color: #60a5fa; }
+        .era-2 .event-year { color: #34d399; }
+        .era-3 .event-year { color: #fbbf24; }
+        .era-4 .event-year { color: #a78bfa; }
+        .event-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .event-desc {
+            font-size: 0.9rem;
+            color: #8892b0;
+            line-height: 1.5;
+        }
+        .branches {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .branches h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        .branch-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .branch {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            width: 280px;
+        }
+        .branch-value { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+        .branch-policy { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .branch-model { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .branch h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .branch ul {
+            list-style: none;
+            text-align: left;
+        }
+        .branch li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .branch li:last-child { border-bottom: none; }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 智能体强化学习发展路线图</h1>
+        <p class="subtitle">Reinforcement Learning for Agents: 1957 - 2025</p>
+
+        <div class="timeline">
+            <!-- Era 1: 理论奠基 -->
+            <div class="era era-1">
+                <div class="era-title">📚 1950s-2000s 理论奠基期</div>
+                <div class="events">
+                    <div class="event">
+                        <div class="event-year">1957</div>
+                        <div class="event-name">Bellman 动态规划</div>
+                        <div class="event-desc">Richard Bellman 提出动态规划和 Bellman 方程，奠定序贯决策的数学基础</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">1989</div>
+                        <div class="event-name">Q-Learning</div>
+                        <div class="event-desc">Christopher Watkins 提出 Q-Learning，实现无模型的最优策略学习</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">1992</div>
+                        <div class="event-name">TD-Gammon</div>
+                        <div class="event-desc">Gerald Tesauro 用 TD 学习训练西洋双陆棋 AI，早期神经网络 + RL 成功案例</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Era 2: 深度RL崛起 -->
+            <div class="era era-2">
+                <div class="era-title">🚀 2013-2017 深度强化学习崛起</div>
+                <div class="events">
+                    <div class="event">
+                        <div class="event-year">2013</div>
+                        <div class="event-name">DQN</div>
+                        <div class="event-desc">DeepMind 首次将深度网络与 Q-Learning 结合，在 Atari 游戏达到人类水平</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2016</div>
+                        <div class="event-name">AlphaGo</div>
+                        <div class="event-desc">击败世界冠军李世石，AI 发展史上的里程碑事件</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2016</div>
+                        <div class="event-name">A3C</div>
+                        <div class="event-desc">异步并行训练框架，大幅提升训练效率</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2017</div>
+                        <div class="event-name">PPO</div>
+                        <div class="event-desc">OpenAI 提出，简单高效，成为 RLHF 的默认算法</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Era 3: 大规模应用 -->
+            <div class="era era-3">
+                <div class="era-title">🏭 2018-2022 大规模应用</div>
+                <div class="events">
+                    <div class="event">
+                        <div class="event-year">2018</div>
+                        <div class="event-name">SAC</div>
+                        <div class="event-desc">最大熵框架，提升探索能力，适合机器人控制</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2019</div>
+                        <div class="event-name">OpenAI Five</div>
+                        <div class="event-desc">击败 Dota 2 世界冠军，展示大规模多智能体协作</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2019</div>
+                        <div class="event-name">AlphaStar</div>
+                        <div class="event-desc">星际争霸 II 达到宗师段位，复杂实时策略博弈</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2020</div>
+                        <div class="event-name">MuZero</div>
+                        <div class="event-desc">无需环境规则即可学习，通用性更强</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Era 4: LLM时代 -->
+            <div class="era era-4">
+                <div class="era-title">🧠 2023-2025 LLM 时代</div>
+                <div class="events">
+                    <div class="event">
+                        <div class="event-year">2022</div>
+                        <div class="event-name">ChatGPT RLHF</div>
+                        <div class="event-desc">RLHF 成为大模型对齐的标准范式</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2023</div>
+                        <div class="event-name">DPO</div>
+                        <div class="event-desc">直接偏好优化，无需奖励模型，大幅简化对齐流程</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2024</div>
+                        <div class="event-name">AgentTuning</div>
+                        <div class="event-desc">Agent 专用微调方法，提升工具调用和规划能力</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-year">2025</div>
+                        <div class="event-name">World Models + RL</div>
+                        <div class="event-desc">DreamerV3 等世界模型，通过"想象"高效学习</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 技术分支 -->
+        <div class="branches">
+            <h2>🔀 三大技术分支</h2>
+            <div class="branch-container">
+                <div class="branch branch-value">
+                    <h3>📊 Value-Based</h3>
+                    <ul>
+                        <li>Q-Learning (1989)</li>
+                        <li>DQN (2013)</li>
+                        <li>Double DQN</li>
+                        <li>Dueling DQN</li>
+                        <li>Rainbow (2017)</li>
+                    </ul>
+                </div>
+                <div class="branch branch-policy">
+                    <h3>🎯 Policy-Based</h3>
+                    <ul>
+                        <li>REINFORCE</li>
+                        <li>TRPO (2015)</li>
+                        <li>PPO (2017)</li>
+                        <li>A3C (2016)</li>
+                        <li>SAC (2018)</li>
+                    </ul>
+                </div>
+                <div class="branch branch-model">
+                    <h3>🌍 Model-Based</h3>
+                    <ul>
+                        <li>Dyna-Q</li>
+                        <li>World Models (2018)</li>
+                        <li>MuZero (2020)</li>
+                        <li>DreamerV3 (2023)</li>
+                        <li>IRIS (2024)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer">Generated by OpenClaw Agent Swarm | 2026-02-13</p>
+    </div>
+</body>
+</html>
