@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Swarm - 强化学习技术调研案例</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <!-- 左侧对话框 -->
+    <div class="chat-panel">
+      <div class="chat-header">
+        <h2>💬 对话记录</h2>
+        <div class="chat-info">强化学习技术调研项目</div>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <!-- 消息将通过 JS 动态加载 -->
+      </div>
+    </div>
+
+    <!-- 右侧内容区 -->
+    <div class="content-panel">
+      <!-- 上方蜂群展示区（可收缩） -->
+      <div class="swarm-section" id="swarmSection">
+        <div class="swarm-header" onclick="toggleSwarm()">
+          <h3>🦞 智能体集群工作流</h3>
+          <button class="toggle-btn" id="toggleBtn">▼</button>
+        </div>
+        <div class="swarm-content" id="swarmContent">
+          <div class="workflow-diagram">
+            <!-- 阶段 0: 主智能体任务分析 -->
+            <div class="workflow-stage">
+              <div class="stage-title">📋 任务分析</div>
+              <div class="agents-row">
+                <div class="agent-card completed">
+                  <div class="agent-icon">🤖</div>
+                  <div class="agent-name">主智能体</div>
+                  <div class="agent-task">分析用户需求</div>
+                  <div class="agent-status">✅ 完成</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-arrow">↓</div>
+
+            <!-- 阶段 0.5: 任务拆解 -->
+            <div class="workflow-stage">
+              <div class="stage-title">🔧 任务拆解</div>
+              <div class="agents-row">
+                <div class="agent-card completed">
+                  <div class="agent-icon">🤖</div>
+                  <div class="agent-name">主智能体</div>
+                  <div class="agent-task">拆解为子任务</div>
+                  <div class="agent-status">✅ 完成</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-arrow">↓</div>
+
+            <!-- 阶段 1: 并行调研 -->
+            <div class="workflow-stage">
+              <div class="stage-title">🔍 并行调研</div>
+              <div class="agents-row">
+                <div class="agent-card completed">
+                  <div class="agent-icon">🔍</div>
+                  <div class="agent-name">Researcher #1</div>
+                  <div class="agent-task">Arxiv 学术论文调研</div>
+                  <div class="agent-status">✅ 已完成 (3m7s)</div>
+                  <div class="agent-metrics">
+                    <span>📄 30k tokens</span>
+                  </div>
+                </div>
+                <div class="agent-card completed">
+                  <div class="agent-icon">🔍</div>
+                  <div class="agent-name">Researcher #2</div>
+                  <div class="agent-task">GitHub 开源项目调研</div>
+                  <div class="agent-status">✅ 已完成 (2m17s)</div>
+                  <div class="agent-metrics">
+                    <span>📄 29.6k tokens</span>
+                  </div>
+                </div>
+                <div class="agent-card completed">
+                  <div class="agent-icon">🔍</div>
+                  <div class="agent-name">Researcher #3</div>
+                  <div class="agent-task">飞书/中文资料调研</div>
+                  <div class="agent-status">✅ 已完成 (2m20s)</div>
+                  <div class="agent-metrics">
+                    <span>📄 20.1k tokens</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-arrow">↓</div>
+
+            <!-- 阶段 2: 报告撰写 -->
+            <div class="workflow-stage">
+              <div class="stage-title">✍️ 撰写</div>
+              <div class="agents-row">
+                <div class="agent-card completed">
+                  <div class="agent-icon">✍️</div>
+                  <div class="agent-name">Writer</div>
+                  <div class="agent-task">整合资料撰写分析报告</div>
+                  <div class="agent-status">✅ 已完成 (1m32s)</div>
+                  <div class="agent-metrics">
+                    <span>📄 26.9k tokens</span>
+                    <span>📝 4000+ 字</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-arrow">↓</div>
+
+            <!-- 阶段 3: 路线图设计 -->
+            <div class="workflow-stage">
+              <div class="stage-title">🎨 设计</div>
+              <div class="agents-row">
+                <div class="agent-card completed">
+                  <div class="agent-icon">🎨</div>
+                  <div class="agent-name">Designer</div>
+                  <div class="agent-task">生成发展路线图</div>
+                  <div class="agent-status">✅ 已完成</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-summary">
+              <h4>📊 执行统计</h4>
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <div class="stat-label">总耗时</div>
+                  <div class="stat-value">9m16s</div>
+                  <div class="stat-sub">实际等待 ~5分钟(并行优化)</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">总 Tokens</div>
+                  <div class="stat-value">~107k</div>
+                  <div class="stat-sub">input + 2.9k output</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">成本节省</div>
+                  <div class="stat-value success">93%</div>
+                  <div class="stat-sub">相比全用 Claude Opus</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">时间节省</div>
+                  <div class="stat-value success">58%</div>
+                  <div class="stat-sub">并行执行优化</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下方内容展示区 -->
+      <div class="preview-section">
+        <div class="preview-header">
+          <h3>📊 生成成果预览</h3>
+          <div class="preview-controls">
+            <button class="control-btn active" onclick="showTab('roadmap')">🗺️ 路线图</button>
+            <button class="control-btn" onclick="showTab('report')">📄 分析报告</button>
+            <button class="control-btn" onclick="openInNewTab()">🔗 新标签打开</button>
+          </div>
+        </div>
+        <div class="preview-content">
+          <div class="tab-content active" id="roadmap">
+            <iframe id="roadmapFrame" src="../RL_survey/rl-roadmap-final.html"></iframe>
+          </div>
+          <div class="tab-content" id="report">
+            <div class="report-viewer">
+              <div class="report-content" id="reportContent">
+                <!-- 报告内容将通过 JS 加载 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
