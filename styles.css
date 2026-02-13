@@ -503,6 +503,38 @@ body {
   box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
 }
 
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.lang-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
 .preview-content {
   flex: 1;
   position: relative;

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw Swarm - 生活服务智能体调研案例</title>
+  <title>OpenClaw Swarm - 强化学习调研案例项目</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js"></script>
 </head>
 <body>
   <div class="main-container">
@@ -12,7 +13,7 @@
     <div class="chat-panel">
       <div class="chat-header">
         <h2>💬 对话记录</h2>
-        <div class="chat-info">生活服务智能体调研项目</div>
+        <div class="chat-info">强化学习调研项目</div>
       </div>
       <div class="chat-messages" id="chatMessages">
         <!-- 消息将通过 JS 动态加载 -->
@@ -195,6 +196,10 @@
         <div class="preview-header">
           <h3>📊 生成成果预览</h3>
           <div class="preview-controls">
+            <div class="language-switcher">
+              <button class="lang-btn" data-lang="zh" onclick="switchLanguage('zh')">中文</button>
+              <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">English</button>
+            </div>
             <button class="control-btn active" onclick="showTab('roadmap')">🗺️ 路线图</button>
             <button class="control-btn" onclick="showTab('report')">📄 完整报告</button>
             <button class="control-btn" onclick="openInNewTab()">🔗 新标签打开</button>

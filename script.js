@@ -1,189 +1,14 @@
-// 对话数据
-const chatData = [
-  {
-    type: 'user',
-    sender: 'orange',
-    time: '2026年2月13日 14:05',
-    content: '调研强化学习技术并写一篇分析报告,分别从Arxiv、github、网络渠道、各种教程中进行信息检索并对信息汇总,生成一个完整的文档,最后生成一副路线图来展示完整的智能体强化学习发展脉络，分批生成报告最后汇总。'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:05',
-    content: `好的！这是一个大型调研任务，我用分段策略来执行。
-
-<h3>编排方案:</h3>
-<pre>
-Phase 1: 并行调研 (4 个 researcher)
-├── 🔍 学术论文调研 (Arxiv)
-├── 🔍 开源项目调研 (GitHub)
-├── 🔍 行业应用调研 (网络渠道)
-└── 🔍 学习资源调研 (教程/课程)
-
-Phase 2: 分章节撰写 (writer)
-├── ✍️ 摘要+背景
-├── ✍️ 核心算法
-├── ✍️ 开源生态
-├── ✍️ 应用案例
-└── ✍️ 发展路线图
-
-Phase 3: 汇总
-└── 🎯 脚本拼接完整报告
-</pre>
-
-<strong>开始执行：</strong><br>
-🚀 Phase 1: 并行调研 已派发
-
-<table>
-<tr><th>智能体</th><th>调研方向</th><th>状态</th></tr>
-<tr><td>🔍 researcher</td><td>Arxiv 学术论文</td><td>⏳ 进行中</td></tr>
-<tr><td>🔍 researcher</td><td>GitHub 开源项目</td><td>⏳ 进行中</td></tr>
-<tr><td>🔍 researcher</td><td>行业应用案例</td><td>⏳ 进行中</td></tr>
-<tr><td>🔍 researcher</td><td>学习资源教程</td><td>⏳ 进行中</td></tr>
-</table>
-
-<p>4 个调研任务并行执行，预计 2-3 分钟完成。完成后进入 Phase 2 分章节撰写，最后汇总生成完整报告 + 发展路线图。</p>
-
-<p>✅ <strong>Arxiv 学术论文调研</strong>完成！涵盖 DQN/PPO/SAC 等经典算法，以及 DPO/IPO/KTO 等最新偏好学习方法。</p>
-<p>⏳ 还有 3 个调研任务进行中...</p>
-
-<p>✅ <strong>行业应用调研</strong>完成！涵盖游戏 AI (AlphaGo/OpenAI Five)、机器人控制、推荐系统、LLM 对齐等领域的实际案例。</p>
-<p>⏳ 还有 2 个调研任务进行中...</p>`
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:12',
-    content: '强化学习调研任务正在进行中，已完成 2/4 个调研（Arxiv 学术论文 ✅、行业应用 ✅），还有 GitHub 开源项目和学习资源教程在跑。<br><br>完成后会自动进入撰写和汇总阶段，预计 10 分钟内完成整个报告。'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:16',
-    content: '✅ <strong>GitHub 开源项目调研</strong>完成！<br><br>让我检查一下所有调研文件：'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:16',
-    content: `🎉 <strong>4 个调研任务全部完成</strong>！现在进入 <strong>Phase 2: 分章节撰写报告</strong>：
-
-<p><strong>Phase 2: 分章节撰写</strong> 已派发（5 个 writer 并行）</p>
-
-<table>
-<tr><th>章节</th><th>内容</th><th>状态</th></tr>
-<tr><td>ch00</td><td>摘要+背景</td><td>⏳ 撰写中</td></tr>
-<tr><td>ch02</td><td>核心算法</td><td>⏳ 撰写中</td></tr>
-<tr><td>ch03</td><td>开源生态</td><td>⏳ 撰写中</td></tr>
-<tr><td>ch04</td><td>应用案例+学习路线</td><td>⏳ 撰写中</td></tr>
-<tr><td>ch06</td><td>路线图+结论</td><td>⏳ 撰写中</td></tr>
-</table>
-
-<p>完成后我会再派发<strong>发展路线图</strong>的生成任务，最后汇总成完整报告。</p>`
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:17',
-    content: '✅ <strong>开源生态章节</strong>完成，包含 6 个主流框架对比和 8 种场景的推荐方案。<br><br>⏳ 还有 4 个章节在写...'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:17',
-    content: '✅ <strong>摘要+背景章节</strong>也完成了，梳理了从 Bellman 动态规划到 DPO 的技术演进脉络。<br><br>⏳ 还有 3 个章节在写（核心算法 + 应用案例 + 路线图）...'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:17',
-    content: '✅ <strong>核心算法章节</strong>完成，包含经典算法对比表和 RLHF→DPO→IPO/KTO 演进路径图。<br><br>⏳ 还有 2 个章节在写（应用案例 + 路线图）...'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:18',
-    content: '✅ <strong>应用案例+学习路线章节</strong>完成！<br><br>🎉 <strong>所有章节撰写完毕</strong>，现在生成发展路线图并汇总报告：'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:18',
-    content: `<strong>Phase 2 完成进度</strong>：
-
-<table>
-<tr><th>章节</th><th>状态</th></tr>
-<tr><td>ch00-摘要+背景</td><td>✅</td></tr>
-<tr><td>ch02-核心算法</td><td>✅</td></tr>
-<tr><td>ch03-开源生态</td><td>✅</td></tr>
-<tr><td>ch04-应用案例+学习路线</td><td>✅</td></tr>
-<tr><td>ch06-路线图+结论</td><td>⏳ 撰写中</td></tr>
-</table>
-
-<p>路线图完成后立即汇总并发送完整报告。</p>`
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:19',
-    content: '✅ <strong>发展路线图+结论</strong>完成！包含 1957-2025 完整时间线和三大技术分支脉络图。<br><br>现在汇总所有章节：<br><br>报告已生成！现在发送给你：'
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:19',
-    content: `✅ <strong>报告已发送！</strong>
-
-<h3>📄 智能体强化学习技术深度分析报告</h3>
-
-<ul>
-<li>578 行，约 38KB（~10000 字）</li>
-<li>完整发展路线图（1957-2025）</li>
-<li>三大技术分支脉络图</li>
-</ul>
-
-<h3>📊 智能体团队执行统计</h3>
-
-<table>
-<tr><th>阶段</th><th>任务</th><th>智能体</th><th>耗时</th></tr>
-<tr><td><strong>调研</strong></td><td>Arxiv/GitHub/行业/教程</td><td>🔍×4</td><td>~2min (并行)</td></tr>
-<tr><td><strong>撰写</strong></td><td>摘要+5章节+路线图</td><td>✍️×5</td><td>~3min (并行)</td></tr>
-<tr><td><strong>汇总</strong></td><td>脚本拼接</td><td>🎯</td><td>&lt;1s</td></tr>
-</table>
-
-<p><strong>总耗时</strong>：约 <strong>15 分钟</strong></p>
-
-<h3>报告结构：</h3>
-
-<ol>
-<li>摘要 + 研究背景</li>
-<li>核心算法（DQN→PPO→DPO 演进）</li>
-<li>开源生态（6 大框架对比）</li>
-<li>行业应用（游戏/机器人/推荐/LLM对齐）</li>
-<li>学习路线（入门→进阶→实战）</li>
-<li>发展路线图 + 结论</li>
-</ol>`
-  },
-  {
-    type: 'agent',
-    sender: '智能体集群',
-    time: '2026年2月13日 14:24',
-    content: `✅ <strong>路线图已发送！</strong>
-
-<h3>📊 包含：</h3>
-<ul>
-<li>四个发展时期（1957-2025）的时间线</li>
-<li>关键里程碑节点（Bellman → DQN → AlphaGo → PPO → ChatGPT RLHF → DPO）</li>
-<li>三大技术分支（Value-Based / Policy-Based / Model-Based）</li>
-</ul>`
-  }
-];
+// 获取对话数据
+function getChatData() {
+  return t('chatData');
+}
 
 // 初始化聊天消息
 function initChat() {
   const chatMessages = document.getElementById('chatMessages');
   chatMessages.innerHTML = '';
 
+  const chatData = getChatData();
   chatData.forEach((msg, index) => {
     setTimeout(() => {
       const messageEl = createMessageElement(msg);
@@ -229,7 +54,9 @@ function showTab(tabName) {
     btn.classList.remove('active');
     const btnText = btn.textContent;
     if ((tabName === 'roadmap' && btnText.includes('路线图')) ||
+        (tabName === 'roadmap' && btnText.includes('Roadmap')) ||
         (tabName === 'report' && btnText.includes('完整报告')) ||
+        (tabName === 'report' && btnText.includes('Full Report')) ||
         (tabName === 'github' && btnText.includes('GitHub')) ||
         (tabName === 'feishu' && btnText.includes('中文调研'))) {
       btn.classList.add('active');
@@ -741,8 +568,9 @@ RL在机器人控制、自动驾驶等领域的落地。
 
 // 在新标签打开当前内容
 function openInNewTab() {
+  const lang = getCurrentLanguage();
   if (currentTab === 'roadmap') {
-    window.open('rl-roadmap-final.html', '_blank');
+    window.open(`roadmap${lang === 'en' ? '-en' : ''}.html`, '_blank');
   } else if (currentTab === 'report') {
     window.open('rl-final-report.md', '_blank');
   } else if (currentTab === 'github') {
@@ -757,7 +585,138 @@ function openFile(filePath) {
   window.open(filePath, '_blank');
 }
 
+// 更新页面文本
+function updatePageText() {
+  // 更新标题
+  document.title = t('pageTitle');
+
+  // 更新聊天标题和信息
+  const chatTitle = document.querySelector('.chat-header h2');
+  if (chatTitle) chatTitle.textContent = t('chatTitle');
+
+  const chatInfo = document.querySelector('.chat-info');
+  if (chatInfo) chatInfo.textContent = t('chatInfo');
+
+  // 更新蜂群标题
+  const swarmTitle = document.querySelector('.swarm-header h3');
+  if (swarmTitle) swarmTitle.textContent = t('swarmTitle');
+
+  // 更新预览标题
+  const previewTitle = document.querySelector('.preview-header h3');
+  if (previewTitle) previewTitle.textContent = t('previewTitle');
+
+  // 更新按钮文本
+  const buttons = document.querySelectorAll('.control-btn');
+  if (buttons[0]) buttons[0].textContent = t('btnRoadmap');
+  if (buttons[1]) buttons[1].textContent = t('btnReport');
+  if (buttons[2]) buttons[2].textContent = t('btnNewTab');
+
+  // 更新工作流阶段标题
+  const stageTitles = document.querySelectorAll('.stage-title');
+  if (stageTitles[0]) stageTitles[0].textContent = t('stageAnalysis');
+  if (stageTitles[1]) stageTitles[1].textContent = t('stageDecompose');
+  if (stageTitles[2]) stageTitles[2].textContent = t('stageResearch');
+  if (stageTitles[3]) stageTitles[3].textContent = t('stageWriting');
+  if (stageTitles[4]) stageTitles[4].textContent = t('stageAssembly');
+
+  // 更新统计标题
+  const statsTitles = document.querySelectorAll('.stats-summary h4');
+  if (statsTitles[0]) statsTitles[0].textContent = t('statsTitle');
+  if (statsTitles[1]) statsTitles[1].textContent = t('filesTitle');
+
+  // 更新统计标签
+  const statLabels = document.querySelectorAll('.stat-label');
+  if (statLabels[0]) statLabels[0].textContent = t('statsTotalTime');
+  if (statLabels[1]) statLabels[1].textContent = t('statsTotalWords');
+  if (statLabels[2]) statLabels[2].textContent = t('statsOptimization');
+  if (statLabels[3]) statLabels[3].textContent = t('statsAgents');
+
+  // 更新智能体名称和任务
+  const agentNames = document.querySelectorAll('.agent-name');
+  const agentTasks = document.querySelectorAll('.agent-task');
+  const agentStatus = document.querySelectorAll('.agent-status');
+
+  // 阶段0: 主智能体
+  if (agentNames[0]) agentNames[0].textContent = t('agentMain');
+  if (agentTasks[0]) agentTasks[0].textContent = t('taskAnalyze');
+  if (agentStatus[0]) agentStatus[0].textContent = t('statusCompleted');
+
+  // 阶段0.5: 任务拆解
+  if (agentNames[1]) agentNames[1].textContent = t('agentMain');
+  if (agentTasks[1]) agentTasks[1].textContent = t('taskDecompose');
+  if (agentStatus[1]) agentStatus[1].textContent = t('statusCompleted');
+
+  // 阶段1: 并行调研
+  if (agentNames[2]) agentNames[2].textContent = t('agentResearcher') + ' #1';
+  if (agentTasks[2]) agentTasks[2].textContent = t('taskArxiv');
+  if (agentStatus[2]) agentStatus[2].textContent = t('statusCompleted');
+
+  if (agentNames[3]) agentNames[3].textContent = t('agentResearcher') + ' #2';
+  if (agentTasks[3]) agentTasks[3].textContent = t('taskGithub');
+  if (agentStatus[3]) agentStatus[3].textContent = t('statusCompleted');
+
+  if (agentNames[4]) agentNames[4].textContent = t('agentResearcher') + ' #3';
+  if (agentTasks[4]) agentTasks[4].textContent = t('taskIndustry');
+  if (agentStatus[4]) agentStatus[4].textContent = t('statusCompleted');
+
+  if (agentNames[5]) agentNames[5].textContent = t('agentResearcher') + ' #4';
+  if (agentTasks[5]) agentTasks[5].textContent = t('taskTutorial');
+  if (agentStatus[5]) agentStatus[5].textContent = t('statusCompleted');
+
+  // 阶段2: 分章节撰写
+  if (agentNames[6]) agentNames[6].textContent = t('agentWriter') + ' #1';
+  if (agentTasks[6]) agentTasks[6].textContent = t('taskChapter00');
+  if (agentStatus[6]) agentStatus[6].textContent = t('statusCompleted');
+
+  if (agentNames[7]) agentNames[7].textContent = t('agentWriter') + ' #2';
+  if (agentTasks[7]) agentTasks[7].textContent = t('taskChapter02');
+  if (agentStatus[7]) agentStatus[7].textContent = t('statusCompleted');
+
+  if (agentNames[8]) agentNames[8].textContent = t('agentWriter') + ' #3';
+  if (agentTasks[8]) agentTasks[8].textContent = t('taskChapter03');
+  if (agentStatus[8]) agentStatus[8].textContent = t('statusCompleted');
+
+  if (agentNames[9]) agentNames[9].textContent = t('agentWriter') + ' #4';
+  if (agentTasks[9]) agentTasks[9].textContent = t('taskChapter04');
+  if (agentStatus[9]) agentStatus[9].textContent = t('statusCompleted');
+
+  if (agentNames[10]) agentNames[10].textContent = t('agentWriter') + ' #5';
+  if (agentTasks[10]) agentTasks[10].textContent = t('taskChapter06');
+  if (agentStatus[10]) agentStatus[10].textContent = t('statusCompleted');
+
+  // 阶段3: 脚本汇总
+  if (agentNames[11]) agentNames[11].textContent = t('agentAssembly');
+  if (agentTasks[11]) agentTasks[11].textContent = t('taskAssemble');
+  if (agentStatus[11]) agentStatus[11].textContent = t('statusCompletedFast');
+
+  // 重新加载聊天消息
+  initChat();
+}
+
+// 切换语言
+function switchLanguage(lang) {
+  setLanguage(lang);
+  updatePageText();
+
+  // 更新语言切换按钮状态
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+
+  // 更新 roadmap iframe 的 src
+  const roadmapFrame = document.getElementById('roadmapFrame');
+  if (roadmapFrame) {
+    roadmapFrame.src = `roadmap${lang === 'en' ? '-en' : ''}.html`;
+  }
+}
+
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
-  initChat();
+  // 设置当前语言按钮状态
+  const currentLang = getCurrentLanguage();
+  document.querySelector(`.lang-btn[data-lang="${currentLang}"]`).classList.add('active');
+
+  // 更新页面文本
+  updatePageText();
 });
